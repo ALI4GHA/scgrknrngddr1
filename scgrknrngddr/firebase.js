@@ -1,10 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 import {
-  getFirestore,
+  initializeFirestore,
   doc,
   getDoc,
   setDoc,
-  updateDoc,
   increment
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
@@ -19,22 +18,22 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+
+const db = initializeFirestore(app, {
+  experimentalAutoDetectLongPolling: true
+});
 
 window.saveVote = async function (questionId, side) {
   const voteRef = doc(db, "votes", questionId);
-  const snapshot = await getDoc(voteRef);
 
-  if (!snapshot.exists()) {
-    await setDoc(voteRef, {
-      left: side === "left" ? 1 : 0,
-      right: side === "right" ? 1 : 0
-    });
-  } else {
-    await updateDoc(voteRef, {
-      [side]: increment(1)
-    });
-  }
+  await setDoc(
+    voteRef,
+    {
+      left: increment(side === "left" ? 1 : 0),
+      right: increment(side === "right" ? 1 : 0)
+    },
+    { merge: true }
+  );
 
   const updatedSnapshot = await getDoc(voteRef);
   return updatedSnapshot.data();
