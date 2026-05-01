@@ -1,4 +1,4 @@
-const DATABASE_URL = "https://secgorekneregedirdata-default-rtdb.europe-west1.firebasedatabase.app";
+const DATABASE_URL = "https://secgoreknerengdedirdata-default-rtdb.europe-west1.firebasedatabase.app";
 
 function safeQuestionId(questionId) {
   return questionId
