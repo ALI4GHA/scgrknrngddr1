@@ -1,40 +1,51 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import {
-  initializeFirestore,
-  doc,
-  getDoc,
-  setDoc,
-  increment
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+const FIREBASE_PROJECT_ID = "secgorekneregedirdata";
+const FIREBASE_API_KEY = "AIzaSyARS_5FSmCi9pIhc_uZhEDD3XYSvxmZTfE";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyARS_5FSmCi9pIhc_uZhEDD3XYSvxmZTfE",
-  authDomain: "secgorekneregedirdata.firebaseapp.com",
-  projectId: "secgorekneregedirdata",
-  storageBucket: "secgorekneregedirdata.firebasestorage.app",
-  messagingSenderId: "361671593918",
-  appId: "1:361671593918:web:5444831d3409dba5f973ef",
-  measurementId: "G-6CW2Q957BR"
-};
+function firestoreDocUrl(questionId) {
+  return `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/votes/${encodeURIComponent(questionId)}?key=${FIREBASE_API_KEY}`;
+}
 
-const app = initializeApp(firebaseConfig);
-
-const db = initializeFirestore(app, {
-  experimentalAutoDetectLongPolling: true
-});
+function readIntField(fields, name) {
+  if (!fields || !fields[name]) return 0;
+  return Number(fields[name].integerValue || 0);
+}
 
 window.saveVote = async function (questionId, side) {
-  const voteRef = doc(db, "votes", questionId);
+  const url = firestoreDocUrl(questionId);
 
-  await setDoc(
-    voteRef,
-    {
-      left: increment(side === "left" ? 1 : 0),
-      right: increment(side === "right" ? 1 : 0)
+  let left = 0;
+  let right = 0;
+
+  const getResponse = await fetch(url);
+
+  if (getResponse.ok) {
+    const existingDoc = await getResponse.json();
+    left = readIntField(existingDoc.fields, "left");
+    right = readIntField(existingDoc.fields, "right");
+  }
+
+  if (side === "left") {
+    left++;
+  } else {
+    right++;
+  }
+
+  const saveResponse = await fetch(url, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
     },
-    { merge: true }
-  );
+    body: JSON.stringify({
+      fields: {
+        left: { integerValue: String(left) },
+        right: { integerValue: String(right) }
+      }
+    })
+  });
 
-  const updatedSnapshot = await getDoc(voteRef);
-  return updatedSnapshot.data();
+  if (!saveResponse.ok) {
+    throw new Error("Firestore REST save failed");
+  }
+
+  return { left, right };
 };
