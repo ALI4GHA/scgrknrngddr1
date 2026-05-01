@@ -1,28 +1,24 @@
-const FIREBASE_PROJECT_ID = "secgorekneregedirdata";
-const FIREBASE_API_KEY = "AIzaSyARS_5FSmCi9pIhc_uZhEDD3XYSvxmZTfE";
+const DATABASE_URL = "https://secgorekneregedirdata-default-rtdb.europe-west1.firebasedatabase.app";
 
-function firestoreDocUrl(questionId) {
-  return `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/votes/${encodeURIComponent(questionId)}?key=${FIREBASE_API_KEY}`;
-}
-
-function readIntField(fields, name) {
-  if (!fields || !fields[name]) return 0;
-  return Number(fields[name].integerValue || 0);
+function safeQuestionId(questionId) {
+  return questionId
+    .replace(/[.#$[\]/]/g, "_")
+    .slice(0, 700);
 }
 
 window.saveVote = async function (questionId, side) {
-  const url = firestoreDocUrl(questionId);
-
-  let left = 0;
-  let right = 0;
+  const id = safeQuestionId(questionId);
+  const url = `${DATABASE_URL}/votes/${id}.json`;
 
   const getResponse = await fetch(url);
+  let data = {};
 
   if (getResponse.ok) {
-    const existingDoc = await getResponse.json();
-    left = readIntField(existingDoc.fields, "left");
-    right = readIntField(existingDoc.fields, "right");
+    data = await getResponse.json();
   }
+
+  let left = Number(data?.left || 0);
+  let right = Number(data?.right || 0);
 
   if (side === "left") {
     left++;
@@ -31,20 +27,15 @@ window.saveVote = async function (questionId, side) {
   }
 
   const saveResponse = await fetch(url, {
-    method: "PATCH",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      fields: {
-        left: { integerValue: String(left) },
-        right: { integerValue: String(right) }
-      }
-    })
+    body: JSON.stringify({ left, right })
   });
 
   if (!saveResponse.ok) {
-    throw new Error("Firestore REST save failed");
+    throw new Error("Realtime Database save failed");
   }
 
   return { left, right };
