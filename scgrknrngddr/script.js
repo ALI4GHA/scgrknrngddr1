@@ -133,34 +133,48 @@ function animateValue(obj, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
-function selectOption(side) {
+async function selectOption(side) {
     if (isAnimating) return;
     isAnimating = true;
 
     const optLeft = QS('#option-left');
     const optRight = QS('#option-right');
 
-    // Generate random realistic percentages between 55 and 75
-    let winPerc = Math.floor(Math.random() * (75 - 55 + 1)) + 55;
-    let losePerc = 100 - winPerc;
+    const q = currentQuestions[currentQuestionIndex];
 
-    let pLeft = side === 'left' ? winPerc : losePerc;
-    let pRight = side === 'right' ? winPerc : losePerc;
+    const questionId = `${currentCategory}_${q.left}_${q.right}`
+        .replace(/\s+/g, "_")
+        .replace(/[^\wəƏğĞüÜşŞıİöÖçÇ_]/g, "");
+
+    let votes;
+
+    try {
+        votes = await window.saveVote(questionId, side);
+    } catch (error) {
+        console.error("Vote could not be saved:", error);
+        alert("Səs yadda saxlanmadı. Firebase/Firestore ayarlarını yoxla.");
+        isAnimating = false;
+        return;
+    }
+
+    const leftVotes = votes.left || 0;
+    const rightVotes = votes.right || 0;
+    const totalVotes = leftVotes + rightVotes;
+
+    const pLeft = totalVotes === 0 ? 0 : Math.round((leftVotes / totalVotes) * 100);
+    const pRight = totalVotes === 0 ? 0 : 100 - pLeft;
 
     optLeft.classList.add(side === 'left' ? 'selected' : 'dimmed', 'show-results');
     optRight.classList.add(side === 'right' ? 'selected' : 'dimmed', 'show-results');
 
-    // Count up the numbers smoothly
     animateValue(QS('#perc-left'), 0, pLeft, 1000);
     animateValue(QS('#perc-right'), 0, pRight, 1000);
     
-    // Animate progress bars
     setTimeout(() => {
         QS('#fill-left').style.width = pLeft + '%';
         QS('#fill-right').style.width = pRight + '%';
     }, 50);
 
-    // Wait 2.5 secs to let user see, then fade and load next
     setTimeout(() => {
         QS('.game-board').classList.add('fading');
         setTimeout(() => {
@@ -170,8 +184,10 @@ function selectOption(side) {
                 currentQuestionIndex = 0;
             }
             loadQuestion();
-        }, 800); // 800ms for smooth fade out
-    }, 2500); // 2.5s delay to admire the result
+        }, 800);
+    }, 2500);
 }
+
+window.onload = init;
 
 window.onload = init;
