@@ -22,7 +22,7 @@ const questions = {
         { left: "İndi 1000 AZN", right: "10 il sonra 10,000 AZN" },
         { left: "Çox pulun olsun, amma meymuna oxşa", right: "Vəhşicəsinə yaraşıqlı ol, amma acından günorta dur" },
         { left: "1 milyon manat, amma heç vaxt istədiyini ala bilməmək", right: "Az pulun olsun, amma seçim azadlığı" },
-        { left: "Hər gün yerdən 10 AZN tapmaq", right: "Ayda 1 dəfə 500 AZN tapmaq" },
+        { left: "Hər gün yerdən 10 AZN tapmaq", right: "Ayda 1 dəfə 400 AZN tapmaq" },
         { left: "Pul üçün sevmədiyin işi gör, amma çox qazan", right: "Sevdiyin işi gör, amma az qazan" },
         { left: "Çox zəngin ol, amma heç kim səni səmimi sevməsin", right: "Az pulun olsun, amma hamı səni həqiqətən sevsin" },
         { left: "1 milyon manat qazan, amma həyatının 10 ilini itir", right: "Heç nə qazanma, amma 10 il əlavə yaşa" },
@@ -42,12 +42,21 @@ const questions = {
         { left: "Kasıb, amma xoşbəxt", right: "Zəngin, amma tənha" }
     ],
     yemek: [
-        { left: "Ömür boyu yalnız dönər yemək", right: "Ömür boyu yalnız kabab yemək" },
-        { left: "Şirin çay içmək", right: "Açıq çay içmək" },
+        { left: "Ömür boyu yalnız quru yemək", right: "Ömür boyu yalnız sulu yemək" },
+        { left: "Yeməklə Şirin çay içmək", right: "Yeməklə Süd içmək" },
         { left: "Nənənin hazırladığı yeməklər", right: "Ən bahalı restoran yeməkləri" },
         { left: "Çox acı yemək", right: "Çox şirin yemək" },
-        { left: "Dolma yeməmək", right: "Çay içməmək" },
-        { left: "Qutabda ət sevmək", right: "Qutabda göyərti sevmək" }
+        { left: "Həmişə polnu yemək", right: "Həmişə az yemək" },
+        { left: "Heçvaxt yeni yeməklər yoxlamamaq", right: "Heçvaxt sevdiyin yeməkləri yeməmək" },
+        { left: "Ayda 1 dəfə Hindistan küçə yeməklərindən yemək", right: "Həftədə 1 dəfə yeməyindən tük çıxması" },
+        { left: "Nusretdə kiçik prosiya ət dönər yemək", right: "Elmlərdə Limuzin dönər yemək" },
+        { left: "Hər gün ən çox sevdiyin yeməkdən yemək", right: "Birdə heçvaxt sevimli yeməyindən yeməmək" },
+        { left: "Ömürlük Fast Food", right: "Ömürlük sağlam qidalanmaq" },
+        { left: "Yeni ildə Dolma yeməmək", right: "Ad günündə Plov yeməmək" },
+        { left: "Hər dəfə öz yeməyindən paylaşmaq", right: "Heçvaxt öz yeməyindən heçkimə verməmək" },
+        { left: "Hər gün səhər xaş+araq kombosu etmək", right: "Hərgün gecə şırdan və acı bibər yemək" },
+        { left: "Həmşəlik öz yeməklərini özün bişir", right: "Heçvaxt yemək bişirmə" },
+        { left: "Ömür boyu qarın qutabı yemək", right: "Ömürlük göyərtili qurtab yemək" }
     ],
     sosial: [
         { left: "Toyda mərkəzdə oynamaq", right: "Toyda kənarda sakit oturmaq" },
