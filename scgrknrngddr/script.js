@@ -134,6 +134,8 @@ function animateValue(obj, start, end, duration) {
 }
 
 async function selectOption(side) {
+    console.log("Clicked:", side);
+
     if (isAnimating) return;
     isAnimating = true;
 
@@ -146,13 +148,22 @@ async function selectOption(side) {
         .replace(/\s+/g, "_")
         .replace(/[^\wəƏğĞüÜşŞıİöÖçÇ_]/g, "");
 
+    // Show selected/dimmed immediately, so user sees the click worked
+    optLeft.classList.add(side === 'left' ? 'selected' : 'dimmed', 'show-results');
+    optRight.classList.add(side === 'right' ? 'selected' : 'dimmed', 'show-results');
+
     let votes;
 
     try {
-        votes = await window.saveVote(questionId, side);
+        votes = await Promise.race([
+            window.saveVote(questionId, side),
+            new Promise((_, reject) =>
+                setTimeout(() => reject(new Error("Firebase timeout")), 8000)
+            )
+        ]);
     } catch (error) {
         console.error("Vote could not be saved:", error);
-        alert("Səs yadda saxlanmadı. Firebase/Firestore ayarlarını yoxla.");
+        alert("Səs yadda saxlanmadı. Firebase bağlantısını yoxla.");
         isAnimating = false;
         return;
     }
@@ -164,12 +175,9 @@ async function selectOption(side) {
     const pLeft = totalVotes === 0 ? 0 : Math.round((leftVotes / totalVotes) * 100);
     const pRight = totalVotes === 0 ? 0 : 100 - pLeft;
 
-    optLeft.classList.add(side === 'left' ? 'selected' : 'dimmed', 'show-results');
-    optRight.classList.add(side === 'right' ? 'selected' : 'dimmed', 'show-results');
-
     animateValue(QS('#perc-left'), 0, pLeft, 1000);
     animateValue(QS('#perc-right'), 0, pRight, 1000);
-    
+
     setTimeout(() => {
         QS('#fill-left').style.width = pLeft + '%';
         QS('#fill-right').style.width = pRight + '%';
