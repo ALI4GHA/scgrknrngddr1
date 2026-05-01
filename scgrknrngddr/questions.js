@@ -11,12 +11,15 @@ const categories = [
 
 const questions = {
     gundelik: [
-        { left: "Bakıda yaşamaq", right: "Kənddə yaşamaq" },
-        { left: "Həmişə gecikmək", right: "Heç vaxt gecikməmək" },
-        { left: "Yayda isti çay içmək", right: "Qışda dondurma yemək" },
-        { left: "Avtobusda ayaq üstə qalmaq", right: "Tıxacda taksidə olmaq" },
+        { left: "Bakıda yaşayıb 2 saat tıxacda qalmaq", right: "Kənddə yaşayıb tıxac görməmək" },
+        { left: "Həmişə 5 dəqiqə gecikmək", right: "Heç vaxt gecikməmək" },
+        { left: "Yayda qalın jaket ilə fırlanmaq", right: "Qışda şortla gəzmək" },
+        { left: "Avtobusda ayaq üstə qalıb tez çatmaq", right: "Tıxacda taksidə olmaq" },
+        { left: "Tez oyanıb produktiv olmaq", right: "Çox yatıb yaxşı hiss etmək" },
+        { left: "İnsanların arxasıyca danışmaq", right: "Üzlərinə deyib dava çıxartmaq" },
         { left: "Telefonunu evdə unutmaq", right: "Pulunu evdə unutmaq" },
-        { left: "Həmişə metroda getmək", right: "Həmişə piyada getmək" }
+        { left: "Bütün stalklarının üstünün açılması", right: "Babana çılpaq şəkillərinin getməsi" },
+        { left: "Həmişə metroda getmək", right: "Həmişə avtobusla getmək" }
     ],
     pul: [
         { left: "İndi 1000 AZN", right: "10 il sonra 10,000 AZN" },
@@ -30,7 +33,7 @@ const questions = {
         { left: "İstədiyin hər şeyi ala bil, amma heç nədən zövq ala bilmə", right: "Az şey ala bil, amma hər şeydən həzz al" },
         { left: "Çox pul qazan, amma hər kəs səndən istifadə etməyə çalışsın", right: "Az pulun olsun, amma ətrafında səmimi insanlar olsun" },
         { left: "Ömür boyu işləmədən pul qazan, amma heç vaxt azad hiss etmə", right: "Çox işləməli ol, amma öz həyatına nəzarət et" },
-        { left: "Çox varlı ol, amma hər qərarın başqaları tərəfindən idarə olunsun", right: "Az pulun olsun, amma bütün qərarları özün ver" },
+        { left: "Çox varlı ol, amma it iyi ver", right: "Az pulun olsun, amma yaxşı qoxu" },
         { left: "1 milyon manatın olsun, amma heç kimə kömək edə bilmə", right: "Az pulun olsun, amma sevdiklərinə dəstək ola bil" },
         { left: "Çox pulun olsun, amma daima itirmək qorxusu ilə yaşa", right: "Pulun az olsun, amma sabah üçün qorxun az olsun" },
         { left: "Məşhur və varlı ol, amma şəxsi həyatın hamıya açıq olsun", right: "Normal gəlirin olsun, amma həyatın tam şəxsi qalsın" },
@@ -70,7 +73,7 @@ const questions = {
     ],
     iyrenc: [
         { left: "Dişsiz qalmaq", right: "Saçsız qalmaq" },
-        { left: "Xarab yemək yemək", right: "Çirkli su içmək" },
+        { left: "Köhnə yemək yemək", right: "Çirkli su içmək" },
         { left: "Hamamda böcək görmək", right: "Yeməyindən tük çıxması" }
     ],
     survival: [
@@ -78,8 +81,14 @@ const questions = {
         { left: "Aysberqdə yaşamaq", right: "Vulkan yaxınlığında yaşamaq" }
     ],
     mekteb: [
-        { left: "Həmişə '5' almaq, amma sevilməmək", right: "Həmişə '3' almaq, amma populyar olmaq" },
-        { left: "Dərsi partanın altında yatmaq", right: "Müəllimdən qaçıb getmək" },
-        { left: "Ev tapşırığını unutmaq", right: "İmtahana gecikmək" }
+        { left: "Həmişə A almaq, amma sevilməmək", right: "Həmişə C- almaq, amma populyar olmaq" },
+        { left: "Lecture zamanı yüksək səslə gəyirmək", right: "Presentation edərkən hürmək" },
+        { left: "İmtahanda köçürərkən kiçik tutulma riski", right: "Aylarla imtahana hazırlaşmaq" },
+        { left: "Çətin müəllimin dəsrini götürüb hərşeyi oxumağa çalışmaq", right: "Heçnə keçməyən müəllimin dərsinə mırta gedib gəlmək " },
+        { left: "Diplom müdafiəsini yalnız etmək", right: "Təmbəl uşaqlarla qrup şəklində etmək" },
+        { left: "50 point verən bir assignment", right: "5 bal verən on assignment" },
+        { left: "Honor code", right: "5 dənə F" },
+        { left: "Yüksək qiymət almağa çalış", right: "Öyrənməyə çalış" },
+        { left: "Deadline-ı hər zaman 1 dəqiqə keçmək", right: "Deadline-dan 1 ay əvvəl işi hazır etmək" }
     ]
 };
