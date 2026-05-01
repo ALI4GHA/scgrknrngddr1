@@ -49,6 +49,7 @@ const questions = {
         { left: "Yeməklə Şirin çay içmək", right: "Yeməklə Süd içmək" },
         { left: "Nənənin hazırladığı yeməklər", right: "Ən bahalı restoran yeməkləri" },
         { left: "Çox acı yemək", right: "Çox şirin yemək" },
+        { left: "Ömür boyu sarımsaqlı qatıq istifadə etmək", right: "Ancaq Ketçup istifadə etmək" },
         { left: "Həmişə polnu yemək", right: "Həmişə az yemək" },
         { left: "Heçvaxt yeni yeməklər yoxlamamaq", right: "Heçvaxt sevdiyin yeməkləri yeməmək" },
         { left: "Ayda 1 dəfə Hindistan küçə yeməklərindən yemək", right: "Həftədə 1 dəfə yeməyindən tük çıxması" },
@@ -57,8 +58,11 @@ const questions = {
         { left: "Ömürlük Fast Food", right: "Ömürlük sağlam qidalanmaq" },
         { left: "Yeni ildə Dolma yeməmək", right: "Ad günündə Plov yeməmək" },
         { left: "Hər dəfə öz yeməyindən paylaşmaq", right: "Heçvaxt öz yeməyindən heçkimə verməmək" },
+        { left: "Ananın bişirdiyi yemək", right: "Atanın düzəltdiyi pomidor yumurta" },
+        { left: "Qışın oğlan çağında Gürcü xəngəli", right: "Qışın oğlan çağında Yayma xəngəli" },
         { left: "Hər gün səhər xaş+araq kombosu etmək", right: "Hərgün gecə şırdan və acı bibər yemək" },
         { left: "Həmşəlik öz yeməklərini özün bişir", right: "Heçvaxt yemək bişirmə" },
+        { left: "Süfrədə qonaq uşağının ağlamağı", right: "Yanındaki insanın sarımsaq yeməsi" },
         { left: "Ömür boyu qarın qutabı yemək", right: "Ömürlük göyərtili qurtab yemək" }
     ],
     sosial: [
@@ -69,7 +73,11 @@ const questions = {
     ],
     meshurlar: [
         { left: "Röya ilə duet oxumaq", right: "Eyyub Yaqubovla eyni masada oturmaq" },
-        { left: "Dünya ulduzu olmaq", right: "Azərbaycanda xalq artisti olmaq" }
+        { left: "Ronaldo ilə boks rinqinə çıxmaq", right: "Tysona qarşı futbolda rəqib olmaq" },
+        { left: "Donald Trump tərəfindən döyülmək", right: "Ağadadaşın baltasına tuş gəlmək" },
+        { left: "Zaur Bəxşəliyevin efirinə çıxıb itmiş yaxınını tapmaq", right: "Xoşqədəmin verlişində tapmaq" },
+        { left: "Razborkada Manaf Ağayevlə üzbəüz gəlmək", right: "Toliklə birlikdə getmək" },
+        { left: "Tanınmış meyxanaçı olmaq", right: "Azərbaycanda xalq artisti olmaq" }
     ],
     iyrenc: [
         { left: "Dişsiz qalmaq", right: "Saçsız qalmaq" },
@@ -77,7 +85,11 @@ const questions = {
         { left: "Hamamda böcək görmək", right: "Yeməyindən tük çıxması" }
     ],
     survival: [
-        { left: "Meşədə tək qalmaq", right: "Səhrada tək qalmaq" },
+        { left: "Dağda tək qalmaq", right: "Səhrada tək qalmaq" },
+        { left: "Qida olmadan 3 gün meşədə qalmaq", right: "su olmadan 1 gün qalmaq səhrada qalmaq " },
+        { left: "Zombi apokalipsisində çoxlu silah daşımaq", right: "Çoxlu Lahmacun daşımaq" },
+        { left: "Apokalipsisde kömək siqnalı verib yerini bəlli etmək", right: "Səssiz qalmaq" },
+        { left: "Köpəkbalığı olan dənizdə üzmək", right: "timsah olan çayı keçmək?" },
         { left: "Aysberqdə yaşamaq", right: "Vulkan yaxınlığında yaşamaq" }
     ],
     mekteb: [
