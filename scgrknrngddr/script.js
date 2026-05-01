@@ -189,5 +189,3 @@ async function selectOption(side) {
 }
 
 window.onload = init;
-
-window.onload = init;
