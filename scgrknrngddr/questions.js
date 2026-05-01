@@ -38,7 +38,7 @@ const questions = {
         { left: "Çox pulun olsun, amma dostlarının çoxu saxta olsun", right: "Az pulun olsun, amma iki həqiqi dostun olsun" },
         { left: "Hər ay çox pul qazan, amma heç vaxt istirahət edə bilmə", right: "Az qazan, amma istədiyin vaxt dincələ bil" },
         { left: "Çox pulun olsun, amma keçmişdəki səhvlərin hamıya məlum olsun", right: "Az pulun olsun, amma reputasiyan təmiz qalsın" },
-        { left: "Varlı ol, amma həmişə tək hiss et", right: "Kasıb ol, amma heç vaxt tək qalmadığını hiss et" }
+        { left: "Varlı ol, amma həmişə tək hiss et", right: "Kasıb ol, amma heç vaxt tək qalmadığını hiss et" },
         { left: "Kasıb, amma xoşbəxt", right: "Zəngin, amma tənha" }
     ],
     yemek: [
