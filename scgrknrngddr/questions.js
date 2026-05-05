@@ -75,7 +75,7 @@ const questions = {
         { left: "Röya ilə duet oxumaq", right: "Eyyub Yaqubovla eyni masada oturmaq" },
         { left: "Ronaldo ilə boks rinqinə çıxmaq", right: "Tysona qarşı futbolda rəqib olmaq" },
         { left: "Donald Trump tərəfindən döyülmək", right: "Ağadadaşın baltasına tuş gəlmək" },
-        { left: "Zaur Bəxşəliyevin efirinə çıxıb itmiş yaxınını tapmaq", right: "Xoşqədəmin verlişində tapmaq" },
+        { left: "İtmiş yaxınını Zaur Bəxşəliyevin verlişində tapmaq", right: "Xoşqədəmin verlişində tapmaq" },
         { left: "Razborkada Manaf Ağayevlə üzbəüz gəlmək", right: "Toliklə birlikdə getmək" },
         { left: "Tanınmış meyxanaçı olmaq", right: "Azərbaycanda xalq artisti olmaq" }
     ],
@@ -86,10 +86,10 @@ const questions = {
     ],
     survival: [
         { left: "Dağda tək qalmaq", right: "Səhrada tək qalmaq" },
-        { left: "Qida olmadan 3 gün meşədə qalmaq", right: "su olmadan 1 gün qalmaq səhrada qalmaq " },
+        { left: "Qida olmadan 3 gün meşədə qalmaq", right: "su olmadan 1 gün səhrada qalmaq " },
         { left: "Zombi apokalipsisində çoxlu silah daşımaq", right: "Çoxlu Lahmacun daşımaq" },
         { left: "Apokalipsisde kömək siqnalı verib yerini bəlli etmək", right: "Səssiz qalmaq" },
-        { left: "Köpəkbalığı olan dənizdə üzmək", right: "timsah olan çayı keçmək?" },
+        { left: "Köpəkbalığı olan dənizdə üzmək", right: "timsah olan çayı keçmək" },
         { left: "Aysberqdə yaşamaq", right: "Vulkan yaxınlığında yaşamaq" }
     ],
     mekteb: [
