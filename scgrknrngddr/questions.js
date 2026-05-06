@@ -14,6 +14,7 @@ const questions = {
         { left: "Bakıda yaşayıb 2 saat tıxacda qalmaq", right: "Kənddə yaşayıb tıxac görməmək" },
         { left: "Həmişə 5 dəqiqə gecikmək", right: "Heç vaxt gecikməmək" },
         { left: "Yayda qalın jaket ilə fırlanmaq", right: "Qışda şortla gəzmək" },
+        { left: "Səhəri söyüş səsinə oyanmaq", right: "Gecəni mahnı səsinə görə yatmamaq" },
         { left: "Avtobusda ayaq üstə qalıb tez çatmaq", right: "Tıxacda taksidə olmaq" },
         { left: "Tez oyanıb produktiv olmaq", right: "Çox yatıb yaxşı hiss etmək" },
         { left: "İnsanların arxasıyca danışmaq", right: "Üzlərinə deyib dava çıxartmaq" },
