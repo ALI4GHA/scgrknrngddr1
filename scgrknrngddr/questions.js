@@ -87,6 +87,9 @@ const questions = {
     survival: [
         { left: "Dağda tək qalmaq", right: "Səhrada tək qalmaq" },
         { left: "Qida olmadan 3 gün meşədə qalmaq", right: "su olmadan 1 gün səhrada qalmaq " },
+        { left: "Avstraliyada həşaratlarla 3 gün qalmaq", right: "Amazonda İlanlarla 3 gün qalmaq " },
+        { left: "Daşqın olan evdən qaçmaq yoxsa", right: "Yanan evdən qaçmaq" },
+        { left: "Qatarı idarə etməyi bilmədən sürmək", right: "Təyyarəni idarə etməyi bilmədən endirmək" },
         { left: "Zombi apokalipsisində çoxlu silah daşımaq", right: "Çoxlu Lahmacun daşımaq" },
         { left: "Apokalipsisde kömək siqnalı verib yerini bəlli etmək", right: "Səssiz qalmaq" },
         { left: "Köpəkbalığı olan dənizdə üzmək", right: "timsah olan çayı keçmək" },
