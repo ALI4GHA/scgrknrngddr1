@@ -11,12 +11,21 @@ const categories = [
 
 const questions = {
     gundelik: [
+        { left: "Köynəyin etiketinin daim boynuna batması", right: "Həmişə corabın ucunun deşik olması" },
+        { left: "Hər danışmaq istəyəndə ağlamaq", right: "Hər dəfə gəzəndə rəqs etmək" },
+        { left: "Hər gülməli anda ağlamaq", right: "Hər kədərli anda gülmək" },
+        { left: "Necə öləcəyini bilmək", right: "Nə zaman öləcəyini bilmək" },
+        { left: "Ayda 1 dəfə çimmək", right: "Özünü pişik kimi dilin ilə yalayıb təmizləmək" },
+        { left: "1 il yalnız şəpit geyinmək", right: "Getdiyin həryerə kostyumla getmək" },
         { left: "Bakıda yaşayıb 2 saat tıxacda qalmaq", right: "Kənddə yaşayıb tıxac görməmək" },
+        { left: "40 santimetrlik ayağlara sahib olmaq", right: "2 metr qollara sahib olmaq" },
         { left: "Həmişə 5 dəqiqə gecikmək", right: "Heç vaxt gecikməmək" },
         { left: "Yayda qalın jaket ilə fırlanmaq", right: "Qışda şortla gəzmək" },
         { left: "Səhəri söyüş səsinə oyanmaq", right: "Gecəni mahnı səsinə görə yatmamaq" },
         { left: "Avtobusda ayaq üstə qalıb tez çatmaq", right: "Tıxacda taksidə olmaq" },
+        { left: "Sinif qrupuna 18+ mesaj atmaq", right: "Ailə qrupuna atmaq" },
         { left: "Tez oyanıb produktiv olmaq", right: "Çox yatıb yaxşı hiss etmək" },
+        { left: "1 ay eyni corabı geyinmək", right: "1 həftə eyni alt paltarını geyinmək" },
         { left: "İnsanların arxasıyca danışmaq", right: "Üzlərinə deyib dava çıxartmaq" },
         { left: "Telefonunu evdə unutmaq", right: "Pulunu evdə unutmaq" },
         { left: "Bütün stalklarının üstünün açılması", right: "Babana çılpaq şəkillərinin getməsi" },
@@ -59,6 +68,7 @@ const questions = {
         { left: "Ömürlük Fast Food", right: "Ömürlük sağlam qidalanmaq" },
         { left: "Yeni ildə Dolma yeməmək", right: "Ad günündə Plov yeməmək" },
         { left: "Hər dəfə öz yeməyindən paylaşmaq", right: "Heçvaxt öz yeməyindən heçkimə verməmək" },
+        { left: "Mayonez tərləmək", right: "Sirkə ağlamaq" },
         { left: "Ananın bişirdiyi yemək", right: "Atanın düzəltdiyi pomidor yumurta" },
         { left: "Qışın oğlan çağında Gürcü xəngəli", right: "Qışın oğlan çağında Yayma xəngəli" },
         { left: "Hər gün səhər xaş+araq kombosu etmək", right: "Hərgün gecə şırdan və acı bibər yemək" },
@@ -68,7 +78,11 @@ const questions = {
     ],
     sosial: [
         { left: "Toyda mərkəzdə oynamaq", right: "Toyda kənarda sakit oturmaq" },
+        { left: "Təcili danışmalıyıq mesajı almaq", right: "Sənə bir söz deyəcəyəm əsəbləşmə mesajı almaq" },
+        { left: "Həmişə reklamı sona qədər izləmək", right: "Keç düyməsinə basanda başqa sayta yönəlmək" },
         { left: "Hər kəsin səni tanıması", right: "Heç kimin səni tanımaması" },
+        { left: "Ömür boyu rep deyərək dialoqa girmək", right: "Muğam oxuyaraq" },
+        { left: "10 dildə danışa bilmək", right: "Heyvanlarla danışa bilmək" },
         { left: "Həmişə sözünü üzə demək", right: "Heç vaxt heç kimi incitməmək" },
         { left: "Ən yaxın dostunla küsmək", right: "Sevgilindən ayrılmaq" }
     ],
@@ -82,7 +96,11 @@ const questions = {
     ],
     iyrenc: [
         { left: "Dişsiz qalmaq", right: "Saçsız qalmaq" },
+        { left: "Çürük yumurta yemək", right: "Tarixi bitmiş süd içmək" },
+        { left: "Əllərinin 7/24 tərləməsi", right: "Ayda 1 dəfə alnında yağlı sivilcə olması" },
         { left: "Köhnə yemək yemək", right: "Çirkli su içmək" },
+        { left: "Gəyirəndə duman çıxarmaq", right: "Qaz çıxaranda göyqurşağı çıxartmaq" },
+        { left: "Ağzında ölənə qədər tük olmağı hissi", right: "Ayaqqabında daş olmağı hissi" },
         { left: "Hamamda böcək görmək", right: "Yeməyindən tük çıxması" }
     ],
     survival: [
