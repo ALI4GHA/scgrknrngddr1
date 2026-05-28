@@ -26,7 +26,7 @@ const questions = {
         { left: "Sinif qrupuna 18+ mesaj atmaq", right: "Ailə qrupuna atmaq" },
         { left: "Tez oyanıb produktiv olmaq", right: "Çox yatıb yaxşı hiss etmək" },
         { left: "1 ay eyni corabı geyinmək", right: "1 həftə eyni alt paltarını geyinmək" },
-        { left: "İnsanların arxasıyca danışmaq", right: "Üzlərinə deyib dava çıxartmaq" },
+        { left: "İnsanların arxasınca danışmaq", right: "Üzlərinə deyib dava çıxartmaq" },
         { left: "Telefonunu evdə unutmaq", right: "Pulunu evdə unutmaq" },
         { left: "Bütün stalklarının üstünün açılması", right: "Babana çılpaq şəkillərinin getməsi" },
         { left: "Həmişə metroda getmək", right: "Həmişə avtobusla getmək" }
