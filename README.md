@@ -1,1 +1,1 @@
-# scgrknrngddr1
+# secgorek.az
